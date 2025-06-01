@@ -1,5 +1,5 @@
 import { GenerateFormData } from '@/components/GenerateWizard';
-import { auth, authenticatedFetch } from '@/lib/auth';
+import { auth, authenticatedFetch } from '@/lib/auth-clerk';
 import { toast } from '@/components/ui/use-toast';
 
 // Types for API responses
