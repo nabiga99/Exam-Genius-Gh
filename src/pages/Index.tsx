@@ -9,18 +9,10 @@ import BillingSubscription from '@/components/BillingSubscription';
 import ProfileSettings from '@/components/ProfileSettings';
 import HelpSupport from '@/components/HelpSupport';
 import { toast } from '@/components/ui/use-toast';
+import { isClerkAvailable } from '@/lib/clerk-utils';
 
 type CurrentView = 'landing' | 'dashboard' | 'generate' | 'documents' | 'sets' | 'billing' | 'settings' | 'support';
 type AuthModalMode = 'login' | 'register' | 'forgot-password' | 'reset-password';
-
-// Check if Clerk is available
-const isClerkAvailable = () => {
-  try {
-    return typeof window !== 'undefined' && window.Clerk !== undefined;
-  } catch (e) {
-    return false;
-  }
-};
 
 const Index = () => {
   const [currentView, setCurrentView] = useState<CurrentView>('landing');

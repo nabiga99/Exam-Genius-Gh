@@ -1,4 +1,5 @@
 import { toast } from '@/components/ui/use-toast';
+import { isClerkAvailable } from './clerk-utils';
 
 // Types
 export interface User {
@@ -14,15 +15,6 @@ export interface User {
     expiresAt: string;
   };
 }
-
-// Check if Clerk is available
-const isClerkAvailable = () => {
-  try {
-    return typeof window !== 'undefined' && window.Clerk !== undefined;
-  } catch (e) {
-    return false;
-  }
-};
 
 // Development mode mock user
 const mockUser: User = {
@@ -134,8 +126,16 @@ export const authenticatedFetch = async (url: string, options: RequestInit = {})
     let token = null;
     
     if (isClerkAvailable()) {
-      // In a real component you would do:
-      // const token = await getToken();
+      // Get token from Clerk if available
+      try {
+        // This must be used in a component with Clerk's hooks
+        // Components should use the useAuthFetch hook instead of this function directly
+        if (window.Clerk?.session) {
+          token = await window.Clerk.session.getToken();
+        }
+      } catch (error) {
+        console.error('Error getting Clerk token:', error);
+      }
     } else {
       // In development mode, use the mock token
       token = mockToken;

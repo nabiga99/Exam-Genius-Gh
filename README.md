@@ -97,4 +97,22 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Ghana Education Service (GES) and NaCCA for curriculum standards
 - OpenRouter for AI API access
-- All contributors and testers 
+- All contributors and testers
+
+## 🔒 Authentication Setup
+
+This project uses [Clerk](https://clerk.com/) for authentication. To configure Clerk:
+
+1. Sign up for a Clerk account at [clerk.com](https://clerk.com/)
+2. Create a new application in the Clerk Dashboard
+3. Get your publishable key from the API Keys section
+4. Add it to your `.env` file:
+   ```
+   VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+   ```
+
+The publishable key should start with:
+- `pk_test_` for development environments
+- `pk_live_` for production environments
+
+If a valid Clerk key is not provided, the application will run in development mode with mock authentication. 

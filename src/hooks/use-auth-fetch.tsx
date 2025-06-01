@@ -1,20 +1,12 @@
 import { useState } from 'react';
 import { useAuth } from '@clerk/clerk-react';
+import { isClerkAvailable } from '@/lib/clerk-utils';
 
 interface FetchState<T> {
   data: T | null;
   loading: boolean;
   error: Error | null;
 }
-
-// Check if Clerk is available
-const isClerkAvailable = () => {
-  try {
-    return typeof window !== 'undefined' && window.Clerk !== undefined;
-  } catch (e) {
-    return false;
-  }
-};
 
 // Mock token for development mode
 const mockToken = 'dev-token-12345';

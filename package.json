@@ -8,7 +8,8 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check-auth": "node -e \"console.log('Clerk publishable key:', process.env.VITE_CLERK_PUBLISHABLE_KEY ? (process.env.VITE_CLERK_PUBLISHABLE_KEY.startsWith('pk_') ? 'Valid ✅' : 'Invalid format ❌') : 'Missing ❌')\""
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.31.8",

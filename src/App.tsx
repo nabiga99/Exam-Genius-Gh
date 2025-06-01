@@ -6,21 +6,19 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { SignedIn, SignedOut, SignIn, SignUp, useClerk } from "@clerk/clerk-react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import { isClerkAvailable } from "./lib/clerk-utils";
+import { AuthHelp } from "./components/AuthHelp";
 
 const queryClient = new QueryClient();
 
-// Check if Clerk is available in the window
-const isClerkAvailable = () => {
-  try {
-    return typeof window !== 'undefined' && window.Clerk !== undefined;
-  } catch (e) {
-    return false;
-  }
-};
-
 const App = () => {
   const hasClerk = isClerkAvailable();
-  console.log("Application running in", hasClerk ? "Clerk authentication mode" : "development mode without authentication");
+  
+  // Log authentication mode
+  console.log(
+    "Application running in", 
+    hasClerk ? "Clerk authentication mode" : "development mode without authentication"
+  );
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -47,6 +45,7 @@ const App = () => {
                 />
                 <Route path="/sign-in" element={<SignIn routing="path" path="/sign-in" />} />
                 <Route path="/sign-up" element={<SignUp routing="path" path="/sign-up" />} />
+                <Route path="/auth-help" element={<AuthHelp />} />
               </>
             ) : (
               // Development mode without Clerk
@@ -54,6 +53,7 @@ const App = () => {
                 <Route path="/" element={<Index />} />
                 <Route path="/sign-in" element={<Navigate to="/" replace />} />
                 <Route path="/sign-up" element={<Navigate to="/" replace />} />
+                <Route path="/auth-help" element={<AuthHelp />} />
               </>
             )}
             <Route path="*" element={<NotFound />} />

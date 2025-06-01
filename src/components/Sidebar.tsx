@@ -12,6 +12,7 @@ import {
   Menu,
   X
 } from 'lucide-react';
+import { AuthStatus } from './AuthStatus';
 
 type CurrentView = 'landing' | 'dashboard' | 'generate' | 'documents' | 'sets' | 'billing' | 'settings' | 'support';
 
@@ -85,6 +86,13 @@ const Sidebar: React.FC<SidebarProps> = ({ onLogout, onNavigate, currentView = '
           </button>
         ))}
       </nav>
+
+      {/* Auth Status */}
+      {!isCollapsed && (
+        <div className="px-4 py-2 border-t border-blue-800">
+          <AuthStatus />
+        </div>
+      )}
 
       {/* Logout */}
       <div className="p-4 border-t border-blue-800">
