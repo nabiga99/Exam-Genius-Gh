@@ -1,0 +1,8 @@
+In the generation process this is what i want it to be like:
+-I will upload all the necessary docs (sylabus, curriculum, teachings notes, learner materials, etc) for a particular subject. which means each subject will have its set of documents to refer to when generating the questions about that particular subject.
+There should be a way that the AI model should read the contents on those files and have a full understanding of what is in them.
+- The strands, and sub strands of each subject will be populated 
+- when a user selects, the level (either JHS or SHS) and the class (BS&, BS8, BS9, SHS1, SHS2 or SHS3), then the next field should be a field to select the subject associated with that selected level and class.
+After that the strands will follow, after selecting the strand, the sub strand will also follow to be selected.
+- When all is done, the information gathered will be passed into the prompt that will allow the questions to be generated
+-The document upload section will be replaced by the first step

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Search, Upload, CheckCircle, Lock } from 'lucide-react';
+import { Search, Upload, CheckCircle } from 'lucide-react';
 import Sidebar from './Sidebar';
 
 type CurrentView = 'landing' | 'dashboard' | 'generate' | 'documents' | 'sets' | 'billing' | 'settings' | 'support';
@@ -93,12 +93,6 @@ const HelpSupport = ({ onLogout, onNavigate }: HelpSupportProps) => {
       question: 'Can I use the same document for multiple question sets?',
       answer: 'Yes! Once uploaded, documents remain in your library and can be reused for generating different question sets with various curriculum topics.',
       category: 'Documents'
-    },
-    {
-      id: '11',
-      question: 'How do I set up authentication with Clerk?',
-      answer: 'ExamGenius uses Clerk for secure authentication. You need to add your Clerk publishable key to the .env file. Visit our Authentication Help page for detailed instructions.',
-      category: 'Authentication'
     }
   ];
 
@@ -150,27 +144,6 @@ const HelpSupport = ({ onLogout, onNavigate }: HelpSupportProps) => {
       <div className="flex-1">
         <div className="p-6 max-w-5xl mx-auto">
           <h1 className="text-2xl font-bold text-gray-900 mb-6">Help & Support</h1>
-
-          {/* Authentication Help Section */}
-          <Card className="mb-6">
-            <CardHeader>
-              <CardTitle>Authentication Help</CardTitle>
-              <CardDescription>
-                Having trouble with authentication? Visit our dedicated page.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex items-center space-x-2">
-                <Lock className="w-5 h-5 text-blue-600" />
-                <p className="text-sm">
-                  Set up or troubleshoot Clerk authentication for your application.
-                </p>
-                <Button variant="outline" onClick={() => window.location.href = '/auth-help'}>
-                  Authentication Help
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
 
           {/* Success Message */}
           {showSuccessMessage && (
