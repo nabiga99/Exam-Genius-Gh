@@ -107,17 +107,6 @@ const QuestionReview: React.FC<QuestionReviewProps> = ({ setId, onBack, onLogout
     }
   };
 
-  const handleExportPDF = async () => {
-    setIsExporting(true);
-    try {
-      await api.exportToPDF(setId);
-    } catch (error) {
-      // Error is already handled in the API service
-    } finally {
-      setIsExporting(false);
-    }
-  };
-
   const handleExportWord = async () => {
     setIsExporting(true);
     try {
@@ -355,15 +344,6 @@ const QuestionReview: React.FC<QuestionReviewProps> = ({ setId, onBack, onLogout
                   <CardTitle>Export Options</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <Button 
-                    variant="outline" 
-                    className="w-full justify-start" 
-                    onClick={handleExportPDF}
-                    disabled={isExporting}
-                  >
-                    <Printer className="mr-2 h-4 w-4" />
-                    {isExporting ? 'Exporting...' : 'Export as PDF'}
-                  </Button>
                   <Button 
                     variant="outline" 
                     className="w-full justify-start"

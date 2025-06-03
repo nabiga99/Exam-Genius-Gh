@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
@@ -83,7 +82,7 @@ const GenerateStep1: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
       </CardHeader>
       <CardContent className="space-y-6">
         {/* Document Selection */}
-        <div className="space-y-2">
+        <div className="space-y-2 opacity-50 pointer-events-none">
           <Label htmlFor="document">Choose a Document</Label>
           {documents.length === 0 ? (
             <Alert>
@@ -99,6 +98,7 @@ const GenerateStep1: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
             <Select
               value={data.documentId}
               onValueChange={(value) => onUpdate({ documentId: value })}
+              disabled={true}
             >
               <SelectTrigger>
                 <SelectValue placeholder="Select a document" />

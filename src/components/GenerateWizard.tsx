@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import Sidebar from './Sidebar';
-import GenerateStep1 from './generate/GenerateStep1';
+import GenerateStep1 from './generate/GenerateStep1New';
 import GenerateStep2 from './generate/GenerateStep2';
 import GenerateStep3 from './generate/GenerateStep3';
 import GenerateProgress from './generate/GenerateProgress';
@@ -22,9 +22,11 @@ interface GenerateWizardProps {
 export interface GenerateFormData {
   documentId: string;
   classLevel: 'JHS' | 'SHS' | '';
+  classGrade: string; // BS7, BS8, BS9, SHS1, SHS2, SHS3
   subjectId: string;
   strandId: string;
   subStrandId: string;
+  learningIndicators: string[]; // Array of selected learning indicator IDs
   questionTypes: Array<{
     id: string;
     type: 'MCQ' | 'True/False' | 'Fill-in-the-Blank' | 'Short Answer';
@@ -41,9 +43,11 @@ const GenerateWizard: React.FC<GenerateWizardProps> = ({ onLogout, onNavigate })
   const [formData, setFormData] = useState<GenerateFormData>({
     documentId: '',
     classLevel: '',
+    classGrade: '',
     subjectId: '',
     strandId: '',
     subStrandId: '',
+    learningIndicators: [],
     questionTypes: [
       { id: '1', type: 'MCQ', count: 5 }
     ],
@@ -55,9 +59,11 @@ const GenerateWizard: React.FC<GenerateWizardProps> = ({ onLogout, onNavigate })
     return (
       formData.documentId !== '' &&
       formData.classLevel !== '' &&
+      formData.classGrade !== '' &&
       formData.subjectId !== '' &&
       formData.strandId !== '' &&
-      formData.subStrandId !== ''
+      formData.subStrandId !== '' &&
+      formData.learningIndicators.length > 0
     );
   };
 
@@ -102,7 +108,7 @@ const GenerateWizard: React.FC<GenerateWizardProps> = ({ onLogout, onNavigate })
         toast({
           variant: "destructive",
           title: "Missing Information",
-          description: "Please complete all curriculum context fields.",
+          description: "Please complete all curriculum context fields and select at least one learning indicator.",
         });
         setCurrentStep(1);
         return;

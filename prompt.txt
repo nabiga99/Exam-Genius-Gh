@@ -6,3 +6,12 @@ There should be a way that the AI model should read the contents on those files 
 After that the strands will follow, after selecting the strand, the sub strand will also follow to be selected.
 - When all is done, the information gathered will be passed into the prompt that will allow the questions to be generated
 -The document upload section will be replaced by the first step
+
+
+
+now reactivate the file upload section on the question generation page but these changes should be made.
+a file (teacher manual) must be attached to a class, so when a class is selected, the file attached to that class and selected subject must populate.
+After that, that file must be passed into the API call to generate the questions.
+The API call must read through the entire file to understand and then generate the questions based on that file, with the options selected and passed into the API call. the prompt must be updated as such.
+
+also on after the questions are generated, the pdf and json export  must be removed leaving the docx export option (NB: it should be exported as docx not doc)
