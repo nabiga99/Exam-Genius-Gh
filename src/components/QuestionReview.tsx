@@ -353,20 +353,6 @@ const QuestionReview: React.FC<QuestionReviewProps> = ({ setId, onBack, onLogout
                     <FileText className="mr-2 h-4 w-4" />
                     {isExporting ? 'Exporting...' : 'Export as Word'}
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    className="w-full justify-start"
-                    onClick={() => {
-                      toast({
-                        title: "Feature Coming Soon",
-                        description: "This feature is not yet implemented.",
-                      });
-                    }}
-                    disabled={isExporting}
-                  >
-                    <Download className="mr-2 h-4 w-4" />
-                    Download as JSON
-                  </Button>
                 </CardContent>
               </Card>
             </div>

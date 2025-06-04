@@ -37,6 +37,11 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
     { id: 'tm6', fileName: 'SHS Biology SHS2 Teacher Manual.pdf', classGrade: 'shs2', subjectId: 'bio_shs', fileUrl: '/manuals/biology/shs_biology_shs2.pdf' },
     { id: 'tm7', fileName: 'SHS Physics Book 1 - Mechanics and Energy.pdf', classGrade: 'shs1', subjectId: 'phy_shs', fileUrl: '/manuals/physics/shs_physics_book1.pdf' },
     { id: 'tm8', fileName: 'SHS Physics Book 2 - Electromagnetism and Atomic Physics.pdf', classGrade: 'shs1', subjectId: 'phy_shs', fileUrl: '/manuals/physics/shs_physics_book2.pdf' },
+    { id: 'tm9', fileName: 'SHS Biology Book 1 - Sections 1-5.pdf', classGrade: 'shs1', subjectId: 'bio_shs', fileUrl: '/manuals/biology/shs_biology_book1.pdf' },
+    { id: 'tm10', fileName: 'SHS Biology Book 2 - Sections 5-8.pdf', classGrade: 'shs1', subjectId: 'bio_shs', fileUrl: '/manuals/biology/shs_biology_book2.pdf' },
+    { id: 'tm11', fileName: 'SHS General Science Book 1 - Sections 1-4.pdf', classGrade: 'shs1', subjectId: 'sci_shs', fileUrl: '/manuals/science/shs_general_science_book1.pdf' },
+    { id: 'tm12', fileName: 'SHS General Science Book 2 - Sections 5-9.pdf', classGrade: 'shs1', subjectId: 'sci_shs', fileUrl: '/manuals/science/shs_general_science_book2.pdf' },
+    { id: 'tm13', fileName: 'SHS Chemistry Year 1 Book 1 and Book 2.pdf', classGrade: 'shs1', subjectId: 'chem_shs', fileUrl: '/manuals/chemistry/SHS 1 Chemistry Year 1 Book 1 and Book2 Teacher-manual.pdf' }
   ];
 
   const classGrades = {
@@ -63,8 +68,8 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
       { id: 'bio_shs', name: 'Biology' },
       { id: 'chem_shs', name: 'Chemistry' },
       { id: 'phy_shs', name: 'Physics' },
-      { id: 'math_shs', name: 'Mathematics' },
-      { id: 'comp_shs', name: 'Computing' }
+      { id: 'comp_shs', name: 'Computing' },
+      { id: 'sci_shs', name: 'General Science' }
     ]
   };
 
@@ -93,6 +98,35 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
       { id: 'phy6', name: 'Electromagnetism - Electrostatics and Magnetostatics' },
       { id: 'phy7', name: 'Electromagnetism - Analogue Electronics' },
       { id: 'phy8', name: 'Atomic and Nuclear Physics' }
+    ],
+    'bio_shs': [
+      { id: 'bio1', name: 'Introduction to Biology and Scientific Methods' },
+      { id: 'bio2', name: 'Fish Farming, Processing and Conservation' },
+      { id: 'bio3', name: 'Cell Biology' },
+      { id: 'bio4', name: 'Organisms and Classification' },
+      { id: 'bio5', name: 'Ecology' },
+      { id: 'bio6', name: 'Diseases and Infections' },
+      { id: 'bio7', name: 'Mammalian Systems' },
+      { id: 'bio8', name: 'Plant Systems' }
+    ],
+    'chem_shs': [
+      { id: 'chem1', name: 'Physical Chemistry - Matter and Its Properties' },
+      { id: 'chem2', name: 'Physical Chemistry - Equilibria' },
+      { id: 'chem3', name: 'Systematic Chemistry of the Elements - Periodicity' },
+      { id: 'chem4', name: 'Systematic Chemistry of the Elements - Bonding' },
+      { id: 'chem5', name: 'Chemistry of Carbon Compounds - Characterisation of Organic Compounds' },
+      { id: 'chem6', name: 'Chemistry of Carbon Compounds - Organic Functional Groups' }
+    ],
+    'sci_shs': [
+      { id: 'sci1', name: 'Exploring Materials - The Characteristics of Science' },
+      { id: 'sci2', name: 'Exploring Materials - Solids and Binary Compounds' },
+      { id: 'sci3', name: 'Processes for Living - Diffusion and Osmosis' },
+      { id: 'sci4', name: 'Processes for Living - Reproduction in Plants and Humans' },
+      { id: 'sci5', name: 'Vigour Behind Life - Solar Panels' },
+      { id: 'sci6', name: 'Vigour Behind Life - Force' },
+      { id: 'sci7', name: 'Vigour Behind Life - Basic Electronics' },
+      { id: 'sci8', name: 'Relationships with the Environment - Promoting Health and Safety' },
+      { id: 'sci9', name: 'Relationships with the Environment - Production in Local Industry' }
     ]
   };
 
@@ -149,6 +183,79 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
     'phy8': [
       { id: 'phy8_1', name: 'Atomic Physics' },
       { id: 'phy8_2', name: 'Nuclear Physics' }
+    ],
+    'sci1': [
+      { id: 'sci1_1', name: 'Science and Materials in Nature - Characteristics of Science' }
+    ],
+    'sci2': [
+      { id: 'sci2_1', name: 'Science and Materials in Nature - Solids and Binary Compounds' }
+    ],
+    'sci3': [
+      { id: 'sci3_1', name: 'Essentials for Survival - Diffusion and Osmosis' }
+    ],
+    'sci4': [
+      { id: 'sci4_1', name: 'Essentials for Survival - Reproduction' }
+    ],
+    'sci5': [
+      { id: 'sci5_1', name: 'Powering the Future with Energy Forms - Solar Panels' }
+    ],
+    'sci6': [
+      { id: 'sci6_1', name: 'Forces Acting on Substances and Mechanisms' }
+    ],
+    'sci7': [
+      { id: 'sci7_1', name: 'Uses of Electronic Components in Household Electronic Devices' }
+    ],
+    'sci8': [
+      { id: 'sci8_1', name: 'The Human Body and Health' }
+    ],
+    'sci9': [
+      { id: 'sci9_1', name: 'Relationship with the Environment (Local Industry)' }
+    ],
+    'bio1': [
+      { id: 'bio1_1', name: 'Foundations of Biology' }
+    ],
+    'bio2': [
+      { id: 'bio2_1', name: 'Biology and Entrepreneurship' }
+    ],
+    'bio3': [
+      { id: 'bio3_1', name: 'Cell Structure and Function' }
+    ],
+    'bio4': [
+      { id: 'bio4_1', name: 'Ecology' }
+    ],
+    'bio5': [
+      { id: 'bio5_1', name: 'Ecology' }
+    ],
+    'bio6': [
+      { id: 'bio6_1', name: 'Diseases and Infections' }
+    ],
+    'bio7': [
+      { id: 'bio7_1', name: 'Mammalian Systems' }
+    ],
+    'bio8': [
+      { id: 'bio8_1', name: 'Plant Systems' }
+    ],
+    'chem1': [
+      { id: 'chem1_1', name: 'Introduction to Chemistry and Scientific Method' },
+      { id: 'chem1_2', name: 'Concept of the Mole' },
+      { id: 'chem1_3', name: 'Mole Ratios, Chemical Formulae and Equations' },
+      { id: 'chem1_4', name: 'Kinetic Theory and States of Matter' }
+    ],
+    'chem2': [
+      { id: 'chem2_1', name: 'Solubility and Qualitative Analysis' }
+    ],
+    'chem3': [
+      { id: 'chem3_1', name: 'Periodic Properties' }
+    ],
+    'chem4': [
+      { id: 'chem4_1', name: 'Interatomic Bonding' },
+      { id: 'chem4_2', name: 'Intermolecular Bonding' }
+    ],
+    'chem5': [
+      { id: 'chem5_1', name: 'Qualitative and Quantitative Analysis of Organic Compounds' }
+    ],
+    'chem6': [
+      { id: 'chem6_1', name: 'Classifications of Organic Compounds' }
     ]
   };
 
@@ -316,6 +423,137 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
       { id: 'li_phy8_2_1', name: 'The Structure of the Nucleus' },
       { id: 'li_phy8_2_2', name: 'Radioactivity' },
       { id: 'li_phy8_2_3', name: 'Balancing Nuclear Reactions' }
+    ],
+    'sci1_1': [
+      { id: 'li_sci1_1_1', name: 'Characteristics of Science in Nature' },
+      { id: 'li_sci1_1_2', name: 'Designing Projects Using the Characteristics of Science' },
+      { id: 'li_sci1_1_3', name: 'Application of the Characteristics of Science Where Appropriate' }
+    ],
+    'sci2_1': [
+      { id: 'li_sci2_1_1', name: 'Metals, Non-Metals, and Semi-Metals' },
+      { id: 'li_sci2_1_2', name: 'Application of Properties of Different Solid Structures in Relation to Their Uses in Life' },
+      { id: 'li_sci2_1_3', name: 'Relationship Between Binary Compounds, the Composition of Binary Compounds and the Names of Compounds' },
+      { id: 'li_sci2_1_4', name: 'Naming of Binary Compounds' }
+    ],
+    'sci3_1': [
+      { id: 'li_sci3_1_1', name: 'Concepts of Diffusion and Its Application in Life' },
+      { id: 'li_sci3_1_2', name: 'Osmosis and Its Application in Our Daily Life' }
+    ],
+    'sci4_1': [
+      { id: 'li_sci4_1_1', name: 'Reproduction in Plants' },
+      { id: 'li_sci4_1_2', name: 'Female Reproductive System' },
+      { id: 'li_sci4_1_3', name: 'Menstrual Cycle' }
+    ],
+    'sci5_1': [
+      { id: 'li_sci5_1_1', name: 'How Solar Panels Reduce the Reliance on Fossil Fuels in Ghana' },
+      { id: 'li_sci5_1_2', name: 'How Solar Panels Are Set Up in Ghana' },
+      { id: 'li_sci5_1_3', name: 'Advantages and Disadvantages of Solar Energy to the Economy of Ghana' }
+    ],
+    'sci6_1': [
+      { id: 'li_sci6_1_1', name: 'Identification and Explanation of Concepts Associated with Forces' }
+    ],
+    'sci7_1': [
+      { id: 'li_sci7_1_1', name: 'Uses of Electronic Components in Household Electronic Devices' }
+    ],
+    'sci8_1': [
+      { id: 'li_sci8_1_1', name: 'Hazards and How to Manage Them in the Environment' },
+      { id: 'li_sci8_1_2', name: 'Causes, Effects and Prevention of Lifestyle Diseases' },
+      { id: 'li_sci8_1_3', name: 'Recreational Drugs and the Negative Effects These Have on the Body and Society' }
+    ],
+    'sci9_1': [
+      { id: 'li_sci9_1_1', name: 'Production of Local Soap' },
+      { id: 'li_sci9_1_2', name: 'Experiment to Produce Different Types of Soap' },
+      { id: 'li_sci9_1_3', name: 'Identify the Science Underlying the Stages of Production' },
+      { id: 'li_sci9_1_4', name: 'Science Processes in the Stages of Production of Kenkey' }
+    ],
+    'bio1_1': [
+      { id: 'li_bio1_1_1', name: 'Importance of Biology' },
+      { id: 'li_bio1_1_2', name: 'Branches of Biology' },
+      { id: 'li_bio1_1_3', name: 'Fields of Work Related to Biology' },
+      { id: 'li_bio1_1_4', name: 'The Scientific Method' },
+      { id: 'li_bio1_1_5', name: 'Steps/Techniques Used in the Scientific Method' },
+      { id: 'li_bio1_1_6', name: 'Symmetry, Orientation, and Sectioning' },
+      { id: 'li_bio1_1_7', name: 'Types of Microscopes and Functions of the Light Microscope' },
+      { id: 'li_bio1_1_8', name: 'Caring for a Light Microscope and Slides' }
+    ],
+    'bio2_1': [
+      { id: 'li_bio2_1_1', name: 'Biological Practices and Tools Used in Fish Farming' },
+      { id: 'li_bio2_1_2', name: 'Harvesting, Processing and Marketing Fish' },
+      { id: 'li_bio2_1_3', name: 'Fish Stock Management and Conservation' }
+    ],
+    'bio3_1': [
+      { id: 'li_bio3_1_1', name: 'Introduction to the Cell Membrane' },
+      { id: 'li_bio3_1_2', name: 'Movement of Substances Through the Cell Membrane' }
+    ],
+    'bio4_1': [
+      { id: 'li_bio4_1_1', name: 'Biological Keys: Making and Using Them' },
+      { id: 'li_bio4_1_2', name: 'Classification of Lower Organisms' },
+      { id: 'li_bio4_1_3', name: 'Major Taxa in Hierarchical Classification' },
+      { id: 'li_bio4_1_4', name: 'Binomial Nomenclature' },
+      { id: 'li_bio4_1_5', name: 'Life Processes and Economic Importance of Lower Organisms' }
+    ],
+    'bio5_1': [
+      { id: 'li_bio5_1_1', name: 'Definition of Ecology and Related Terms' },
+      { id: 'li_bio5_1_2', name: 'Ecological Concepts in Major Habitats' },
+      { id: 'li_bio5_1_3', name: 'Interdependency of Living Organisms' },
+      { id: 'li_bio5_1_4', name: 'Outcomes of Interdependency in the Environment' },
+      { id: 'li_bio5_1_5', name: 'Ecological Tools for Estimating Population Size and Density' },
+      { id: 'li_bio5_1_6', name: 'Energy Flow Determination Methods' },
+      { id: 'li_bio5_1_7', name: 'Ecological Pyramids' },
+      { id: 'li_bio5_1_8', name: 'Relevance of Energy Flow Determination Methods' }
+    ],
+    'bio6_1': [
+      { id: 'li_bio6_1_1', name: 'Common Diseases: Causative Organisms' },
+      { id: 'li_bio6_1_2', name: 'Common Diseases: Transmission Cycles' },
+      { id: 'li_bio6_1_3', name: 'Common Diseases: Effects and Control/Prevention' }
+    ],
+    'bio7_1': [
+      { id: 'li_bio7_1_1', name: 'External Organs/Features and Their Functions' },
+      { id: 'li_bio7_1_2', name: 'Internal Organs/Features and Their Functions' },
+      { id: 'li_bio7_1_3', name: 'Sensory Organs and Their Functions' },
+      { id: 'li_bio7_1_4', name: 'Digestive Systems and Associated Organs in Different Animals' }
+    ],
+    'bio8_1': [
+      { id: 'li_bio8_1_1', name: 'Morphology of Flowering Plants' },
+      { id: 'li_bio8_1_2', name: 'Distinguishing Features of Angiosperms' },
+      { id: 'li_bio8_1_3', name: 'Distinctions Between Monocotyledons and Dicotyledons' },
+      { id: 'li_bio8_1_4', name: 'Internal Structures and Functions of Plant Parts' },
+      { id: 'li_bio8_1_5', name: 'Factors Affecting Growth and Development in Flowering Plants' }
+    ],
+    'chem1_1': [
+      { id: 'li_chem1_1_1', name: 'Introduction to Chemistry and Scientific Method' },
+      { id: 'li_chem1_1_2', name: 'Concept of the Mole' },
+      { id: 'li_chem1_1_3', name: 'Mole Ratios, Chemical Formulae and Equations' },
+      { id: 'li_chem1_1_4', name: 'Kinetic Theory and States of Matter' }
+    ],
+    'chem1_2': [
+      { id: 'li_chem1_2_1', name: 'Solubility and Qualitative Analysis' }
+    ],
+    'chem1_3': [
+      { id: 'li_chem1_3_1', name: 'Periodic Properties' }
+    ],
+    'chem1_4': [
+      { id: 'li_chem1_4_1', name: 'Interatomic Bonding' },
+      { id: 'li_chem1_4_2', name: 'Intermolecular Bonding' }
+    ],
+    'chem2_1': [
+      { id: 'li_chem2_1_1', name: 'Solubility and Qualitative Analysis' }
+    ],
+    'chem3_1': [
+      { id: 'li_chem3_1_1', name: 'Periodic Properties' }
+    ],
+    'chem4_1': [
+      { id: 'li_chem4_1_1', name: 'Interatomic Bonding' },
+      { id: 'li_chem4_1_2', name: 'Intermolecular Bonding' }
+    ],
+    'chem4_2': [
+      { id: 'li_chem4_2_1', name: 'Intermolecular Bonding' }
+    ],
+    'chem5_1': [
+      { id: 'li_chem5_1_1', name: 'Qualitative and Quantitative Analysis of Organic Compounds' }
+    ],
+    'chem6_1': [
+      { id: 'li_chem6_1_1', name: 'Classifications of Organic Compounds' }
     ]
   };
 
@@ -345,24 +583,7 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
   };
 
   // Get available teacher manuals for the selected class, subject and strand
-  const getAvailableTeacherManuals = () => {
-    if (!data.classGrade || !data.subjectId) return [];
-    
-    // For computing subject, filter by strand
-    if (data.subjectId === 'comp_shs' && data.strandId) {
-      if (data.strandId === 'comp1') {
-        // Computer Architecture uses Book 1
-        return teacherManuals.filter(
-          manual => manual.subjectId === 'comp_shs' && manual.id === 'tm4'
-        );
-      } else if (data.strandId === 'comp2' || data.strandId === 'comp3') {
-        // Programming Logic and Web Development use Book 2
-        return teacherManuals.filter(
-          manual => manual.subjectId === 'comp_shs' && manual.id === 'tm5'
-        );
-      }
-    }
-    
+  const getAvailableTeacherManuals = (data: FormData) => {
     // For physics subject, filter by strand
     if (data.subjectId === 'phy_shs' && data.strandId) {
       // Sections 1-4 are in Book 1
@@ -379,10 +600,70 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
       }
     }
     
-    // For other subjects, filter by class and subject
-    return teacherManuals.filter(
-      manual => manual.classGrade === data.classGrade && manual.subjectId === data.subjectId
-    );
+    // For computing subject, filter by strand
+    if (data.subjectId === 'comp_shs' && data.strandId) {
+      // Computer Architecture (Section 1) is in Book 1
+      if (['comp1'].includes(data.strandId)) {
+        return teacherManuals.filter(
+          manual => manual.subjectId === 'comp_shs' && manual.id === 'tm4'
+        );
+      } 
+      // Programming and Web Dev (Sections 2-3) are in Book 2
+      else if (['comp2', 'comp3'].includes(data.strandId)) {
+        return teacherManuals.filter(
+          manual => manual.subjectId === 'comp_shs' && manual.id === 'tm5'
+        );
+      }
+    }
+    
+    // For biology subject, filter by strand
+    if (data.subjectId === 'bio_shs' && data.strandId) {
+      // Special case for section 5 (Ecology) which is split between books
+      if (data.strandId === 'bio5' && data.subStrandId === 'bio5_1' && 
+          data.learningIndicators.includes('Relevance of Energy Flow Determination Methods')) {
+        return teacherManuals.filter(
+          manual => manual.subjectId === 'bio_shs' && manual.id === 'tm10'
+        );
+      }
+      // Sections 1-5 are in Book 1 (excluding special case above)
+      else if (['bio1', 'bio2', 'bio3', 'bio4', 'bio5'].includes(data.strandId)) {
+        return teacherManuals.filter(
+          manual => manual.subjectId === 'bio_shs' && manual.id === 'tm9'
+        );
+      } 
+      // Sections 6-8 are in Book 2
+      else if (['bio6', 'bio7', 'bio8'].includes(data.strandId)) {
+        return teacherManuals.filter(
+          manual => manual.subjectId === 'bio_shs' && manual.id === 'tm10'
+        );
+      }
+    }
+    
+    // For chemistry subject - all sections are in one combined book
+    if (data.subjectId === 'chem_shs') {
+      return teacherManuals.filter(
+        manual => manual.subjectId === 'chem_shs' && manual.id === 'tm13'
+      );
+    }
+    
+    // For general science subject, filter by strand
+    if (data.subjectId === 'sci_shs' && data.strandId) {
+      // Sections 1-4 are in Book 1
+      if (['sci1', 'sci2', 'sci3', 'sci4'].includes(data.strandId)) {
+        return teacherManuals.filter(
+          manual => manual.subjectId === 'sci_shs' && manual.id === 'tm11'
+        );
+      } 
+      // Sections 5-9 are in Book 2
+      else if (['sci5', 'sci6', 'sci7', 'sci8', 'sci9'].includes(data.strandId)) {
+        return teacherManuals.filter(
+          manual => manual.subjectId === 'sci_shs' && manual.id === 'tm12'
+        );
+      }
+    }
+    
+    // Return all manuals that match the subject
+    return teacherManuals.filter(manual => manual.subjectId === data.subjectId);
   };
 
   const handleLearningIndicatorChange = (id: string, checked: boolean) => {
@@ -406,7 +687,68 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
     }
   };
 
-  const availableManuals = getAvailableTeacherManuals();
+  const availableManuals = getAvailableTeacherManuals(data);
+
+  const getSubStrands = (subjectId: string, strandId: string) => {
+    // Sub-strands for each strand
+    const subStrandMap: Record<string, Array<{ id: string, name: string }>> = {
+      // ... existing code ...
+
+      // Biology sub-strands
+      'bio1': [
+        { id: 'bio1_1', name: 'Foundations of Biology' }
+      ],
+      'bio2': [
+        { id: 'bio2_1', name: 'Biology and Entrepreneurship' }
+      ],
+      'bio3': [
+        { id: 'bio3_1', name: 'Cell Structure and Function' }
+      ],
+      'bio4': [
+        { id: 'bio4_1', name: 'Ecology' }
+      ],
+      'bio5': [
+        { id: 'bio5_1', name: 'Ecology' }
+      ],
+      'bio6': [
+        { id: 'bio6_1', name: 'Diseases and Infections' }
+      ],
+      'bio7': [
+        { id: 'bio7_1', name: 'Mammalian Systems' }
+      ],
+      'bio8': [
+        { id: 'bio8_1', name: 'Plant Systems' }
+      ],
+      
+      // Chemistry sub-strands
+      'chem1': [
+        { id: 'chem1_1', name: 'Introduction to Chemistry and Scientific Method' },
+        { id: 'chem1_2', name: 'Concept of the Mole' },
+        { id: 'chem1_3', name: 'Mole Ratios, Chemical Formulae and Equations' },
+        { id: 'chem1_4', name: 'Kinetic Theory and States of Matter' }
+      ],
+      'chem2': [
+        { id: 'chem2_1', name: 'Solubility and Qualitative Analysis' }
+      ],
+      'chem3': [
+        { id: 'chem3_1', name: 'Periodic Properties' }
+      ],
+      'chem4': [
+        { id: 'chem4_1', name: 'Interatomic Bonding' },
+        { id: 'chem4_2', name: 'Intermolecular Bonding' }
+      ],
+      'chem5': [
+        { id: 'chem5_1', name: 'Qualitative and Quantitative Analysis of Organic Compounds' }
+      ],
+      'chem6': [
+        { id: 'chem6_1', name: 'Classifications of Organic Compounds' }
+      ],
+      
+      // ... existing code ...
+    };
+    
+    return subStrandMap[strandId] || [];
+  };
 
   return (
     <Card>
@@ -414,58 +756,6 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
         <CardTitle>Select Document & Curriculum</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
-        {/* Document Selection - Now Active */}
-        <div className="space-y-2">
-          <Label htmlFor="document" className="flex items-center">
-            Teacher Manual <span className="text-red-500 ml-1">*</span>
-          </Label>
-          {data.classGrade && data.subjectId ? (
-            availableManuals.length > 0 ? (
-              <>
-                <Select
-                  value={data.documentId}
-                  onValueChange={(value) => onUpdate({ documentId: value })}
-                >
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a teacher manual" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {availableManuals.map((manual) => (
-                      <SelectItem key={manual.id} value={manual.id}>
-                        <div className="flex items-center">
-                          <FileText className="w-4 h-4 mr-2" />
-                          {manual.fileName}
-                        </div>
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                {!data.documentId && (
-                  <p className="text-sm text-red-500 mt-1">
-                    A teacher manual is required to generate questions.
-                  </p>
-                )}
-              </>
-            ) : (
-              <div className="space-y-2">
-                <Alert variant="destructive">
-                  <AlertCircle className="h-4 w-4" />
-                  <AlertDescription>
-                    No teacher manuals found for this class and subject. Please contact an administrator.
-                  </AlertDescription>
-                </Alert>
-              </div>
-            )
-          ) : (
-            <Alert>
-              <Info className="h-4 w-4" />
-              <AlertDescription>
-                Please select a class and subject to see available teacher manuals.
-              </AlertDescription>
-            </Alert>
-          )}
-        </div>
-
         {/* Class Level Selection */}
         <div className="space-y-3">
           <Label>Class Level</Label>
@@ -482,9 +772,9 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
             })}
             className="flex space-x-6"
           >
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem value="JHS" id="jhs" />
-              <Label htmlFor="jhs">JHS (Junior High School)</Label>
+            <div className="flex items-center space-x-2 opacity-50">
+              <RadioGroupItem value="JHS" id="jhs" disabled />
+              <Label htmlFor="jhs" className="text-gray-500">JHS (Junior High School) - Coming Soon</Label>
             </div>
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="SHS" id="shs" />
@@ -641,6 +931,58 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
             )}
           </div>
         )}
+        
+        {/* Document Selection - Moved to bottom */}
+        <div className="space-y-2 mt-4">
+          <Label htmlFor="document" className="flex items-center">
+            Teacher Manual <span className="text-red-500 ml-1">*</span>
+          </Label>
+          {data.classGrade && data.subjectId ? (
+            availableManuals.length > 0 ? (
+              <>
+                <Select
+                  value={data.documentId}
+                  onValueChange={(value) => onUpdate({ documentId: value })}
+                >
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a teacher manual" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {availableManuals.map((manual) => (
+                      <SelectItem key={manual.id} value={manual.id}>
+                        <div className="flex items-center">
+                          <FileText className="w-4 h-4 mr-2" />
+                          {manual.fileName}
+                        </div>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                {!data.documentId && (
+                  <p className="text-sm text-red-500 mt-1">
+                    A teacher manual is required to generate questions.
+                  </p>
+                )}
+              </>
+            ) : (
+              <div className="space-y-2">
+                <Alert variant="destructive">
+                  <AlertCircle className="h-4 w-4" />
+                  <AlertDescription>
+                    No teacher manuals found for this class and subject. Please contact an administrator.
+                  </AlertDescription>
+                </Alert>
+              </div>
+            )
+          ) : (
+            <Alert>
+              <Info className="h-4 w-4" />
+              <AlertDescription>
+                Please select a class and subject to see available teacher manuals.
+              </AlertDescription>
+            </Alert>
+          )}
+        </div>
       </CardContent>
     </Card>
   );
