@@ -62,7 +62,7 @@ Exam Genius is an AI-powered educational tool designed to help Ghanaian teachers
 
 3. Start the development server:
    ```bash
-   npm run dev
+npm run dev
    # or with bun
    bun dev
    ```

@@ -41,7 +41,10 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
     { id: 'tm10', fileName: 'SHS Biology Book 2 - Sections 5-8.pdf', classGrade: 'shs1', subjectId: 'bio_shs', fileUrl: '/manuals/biology/shs_biology_book2.pdf' },
     { id: 'tm11', fileName: 'SHS General Science Book 1 - Sections 1-4.pdf', classGrade: 'shs1', subjectId: 'sci_shs', fileUrl: '/manuals/science/shs_general_science_book1.pdf' },
     { id: 'tm12', fileName: 'SHS General Science Book 2 - Sections 5-9.pdf', classGrade: 'shs1', subjectId: 'sci_shs', fileUrl: '/manuals/science/shs_general_science_book2.pdf' },
-    { id: 'tm13', fileName: 'SHS Chemistry Year 1 Book 1 and Book 2.pdf', classGrade: 'shs1', subjectId: 'chem_shs', fileUrl: '/manuals/chemistry/SHS 1 Chemistry Year 1 Book 1 and Book2 Teacher-manual.pdf' }
+    { id: 'tm13', fileName: 'SHS Chemistry Year 1 Book 1 and Book 2.pdf', classGrade: 'shs1', subjectId: 'chem_shs', fileUrl: '/manuals/chemistry/SHS 1 Chemistry Year 1 Book 1 and Book2 Teacher-manual.pdf' },
+    { id: 'tm14', fileName: 'SHS ICT Book 1 - Sections 1-3.pdf', classGrade: 'shs1', subjectId: 'ict_shs', fileUrl: '/manuals/ict/SHS 1 ICT Year 1 Book 1 teacher manual.pdf' },
+    { id: 'tm15', fileName: 'SHS ICT Book 2 - Sections 4-5.pdf', classGrade: 'shs1', subjectId: 'ict_shs', fileUrl: '/manuals/ict/SHS 1 ICT Year 1 Book 2 teacher manual.pdf' },
+    { id: 'tm16', fileName: 'SHS Social Studies Book 1 and Book 2.pdf', classGrade: 'shs1', subjectId: 'ss_shs', fileUrl: '/manuals/social_studies/SHS 1 Social Studies Year 1 Book 1 and Book 2 teacher manual.pdf' }
   ];
 
   const classGrades = {
@@ -60,16 +63,18 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
   const subjects = {
     JHS: [
       { id: 'sci_jhs', name: 'Science' },
-      { id: 'math_jhs', name: 'Mathematics' },
-      { id: 'eng_jhs', name: 'English Language' },
-      { id: 'ss_jhs', name: 'Social Studies' }
+      { id: 'math_jhs', name: 'Mathematics (Coming Soon)', disabled: true },
+      { id: 'eng_jhs', name: 'English Language (Coming Soon)', disabled: true },
+      { id: 'ss_jhs', name: 'Social Studies (Coming Soon)', disabled: true }
     ],
     SHS: [
       { id: 'bio_shs', name: 'Biology' },
       { id: 'chem_shs', name: 'Chemistry' },
       { id: 'phy_shs', name: 'Physics' },
       { id: 'comp_shs', name: 'Computing' },
-      { id: 'sci_shs', name: 'General Science' }
+      { id: 'sci_shs', name: 'General Science' },
+      { id: 'ict_shs', name: 'ICT' },
+      { id: 'ss_shs', name: 'Social Studies' }
     ]
   };
 
@@ -127,6 +132,16 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
       { id: 'sci7', name: 'Vigour Behind Life - Basic Electronics' },
       { id: 'sci8', name: 'Relationships with the Environment - Promoting Health and Safety' },
       { id: 'sci9', name: 'Relationships with the Environment - Production in Local Industry' }
+    ],
+    'ict_shs': [
+      { id: 'ict1', name: 'ICTs in the Society' },
+      { id: 'ict2', name: 'Network Systems for Transmitting Information' }
+    ],
+    'ss_shs': [
+      { id: 'ss1', name: 'Identity, Significance and Purpose' },
+      { id: 'ss2', name: 'Law and Order in the Society' },
+      { id: 'ss3', name: 'Ethics and Human Development' },
+      { id: 'ss4', name: 'Production, Exchange and Creativity' }
     ]
   };
 
@@ -200,16 +215,21 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
       { id: 'sci5_1', name: 'Powering the Future with Energy Forms - Solar Panels' }
     ],
     'sci6': [
-      { id: 'sci6_1', name: 'Forces Acting on Substances and Mechanisms' }
+      { id: 'sci6_1', name: 'Identification and Explanation of Concepts Associated with Forces' }
     ],
     'sci7': [
       { id: 'sci7_1', name: 'Uses of Electronic Components in Household Electronic Devices' }
     ],
     'sci8': [
-      { id: 'sci8_1', name: 'The Human Body and Health' }
+      { id: 'sci8_1', name: 'Hazards and How to Manage Them in the Environment' },
+      { id: 'sci8_1_2', name: 'Causes, Effects and Prevention of Lifestyle Diseases' },
+      { id: 'sci8_1_3', name: 'Recreational Drugs and the Negative Effects These Have on the Body and Society' }
     ],
     'sci9': [
-      { id: 'sci9_1', name: 'Relationship with the Environment (Local Industry)' }
+      { id: 'sci9_1', name: 'Production of Local Soap' },
+      { id: 'li_sci9_1_2', name: 'Experiment to Produce Different Types of Soap' },
+      { id: 'li_sci9_1_3', name: 'Identify the Science Underlying the Stages of Production' },
+      { id: 'li_sci9_1_4', name: 'Science Processes in the Stages of Production of Kenkey' }
     ],
     'bio1': [
       { id: 'bio1_1', name: 'Foundations of Biology' }
@@ -256,6 +276,32 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
     ],
     'chem6': [
       { id: 'chem6_1', name: 'Classifications of Organic Compounds' }
+    ],
+    'ict1': [
+      { id: 'ict1_1', name: 'ICTs in the Society' },
+      { id: 'ict1_2', name: 'Network Systems for Transmitting Information' }
+    ],
+    'ict2': [
+      { id: 'ict2_1', name: 'Guided and Unguided Network Systems' },
+      { id: 'ict2_2', name: 'Computer and Information Security' }
+    ],
+    'ss1': [
+      { id: 'ss1_1', name: 'A Geographical and Historical Sketch of Africa' }
+    ],
+    'ss2': [
+      { id: 'ss2_1', name: 'Civic Ideals and Practices' }
+    ],
+    'ss3': [
+      { id: 'ss3_1', name: 'Indigenous Knowledge Systems' },
+      { id: 'ss3_2', name: 'Ethics and Human Values' },
+      { id: 'ss3_3', name: 'Civilisations of Africa' },
+      { id: 'ss3_4', name: 'Revolutions that Changed the World' }
+    ],
+    'ss4': [
+      { id: 'ss4_1', name: 'Economic Activities in Africa' },
+      { id: 'ss4_2', name: 'Entrepreneurship, Workplace Culture and Productivity' },
+      { id: 'ss4_3', name: 'Consumer Rights, Protection and Responsibilities' },
+      { id: 'ss4_4', name: 'Financial Literacy' }
     ]
   };
 
@@ -553,7 +599,86 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
       { id: 'li_chem5_1_1', name: 'Qualitative and Quantitative Analysis of Organic Compounds' }
     ],
     'chem6_1': [
-      { id: 'li_chem6_1_1', name: 'Classifications of Organic Compounds' }
+      { id: 'li_chem6_1_1', name: 'Hydrocarbon and Their Derivatives' },
+      { id: 'li_chem6_1_2', name: 'Functional Group Classification' },
+      { id: 'li_chem6_1_3', name: 'Homologous Series' }
+    ],
+    'ict1_1': [
+      { id: 'li_ict1_1_1', name: 'Computer hardware needed to create a document' },
+      { id: 'li_ict1_1_2', name: 'Computer software needed to create a document' },
+      { id: 'li_ict1_1_3', name: 'Basic file handling in Word' },
+      { id: 'li_ict1_1_4', name: 'Basic editing tools' },
+      { id: 'li_ict1_1_5', name: 'Reviewing tools' },
+      { id: 'li_ict1_1_6', name: 'Formatting tools' },
+      { id: 'li_ict1_1_7', name: 'Layout tools for lines, paragraphs, and pages' },
+      { id: 'li_ict1_1_8', name: 'Creating and editing lists' }
+    ],
+    'ict1_2': [
+      { id: 'li_ict1_2_1', name: 'What is a digital device?' },
+      { id: 'li_ict1_2_2', name: 'Importance of digital devices' },
+      { id: 'li_ict1_2_3', name: 'Features of digital devices' },
+      { id: 'li_ict1_2_4', name: 'Purpose/uses of smartphones and other smart devices' }
+    ],
+    'ict1_3': [
+      { id: 'li_ict1_3_1', name: 'What is the internet?' },
+      { id: 'li_ict1_3_2', name: 'Internet services' },
+      { id: 'li_ict1_3_3', name: 'Internet evolution' },
+      { id: 'li_ict1_3_4', name: 'Definition and examples of ISPs' }
+    ],
+    'ict2_1': [
+      { id: 'li_ict2_1_1', name: 'What is a computer network?' },
+      { id: 'li_ict2_1_2', name: 'Network classification by area' },
+      { id: 'li_ict2_1_3', name: 'Network classification by architecture' },
+      { id: 'li_ict2_1_4', name: 'Network topology classification' },
+      { id: 'li_ict2_1_5', name: 'Transmission media classification' }
+    ],
+    'ict2_2': [
+      { id: 'li_ict2_2_1', name: 'Introduction to computer safety risks' },
+      { id: 'li_ict2_2_2', name: 'Musculoskeletal disorders and repetitive strain injury' },
+      { id: 'li_ict2_2_3', name: 'Vision problems and headaches' },
+      { id: 'li_ict2_2_4', name: 'Sleep disorders and weight problems' },
+      { id: 'li_ict2_2_5', name: 'Trips, falls, and electrocution risks' }
+    ],
+    'ss1_1': [
+      { id: 'li_ss1_1_1', name: 'Describe key geographical features of Africa' },
+      { id: 'li_ss1_1_2', name: 'Geographical features influence on development' },
+      { id: 'li_ss1_1_3', name: 'Climate change influence on early African populations' }
+    ],
+    'ss2_1': [
+      { id: 'li_ss2_1_1', name: 'Meaning and purpose of road safety' },
+      { id: 'li_ss2_1_2', name: 'Causes of road accidents and socio-economic implications' },
+      { id: 'li_ss2_1_3', name: 'Road signs and markings' },
+      { id: 'li_ss2_1_4', name: 'Institutions responsible for road safety' }
+    ],
+    'ss3_1': [
+      { id: 'li_ss3_1_1', name: 'Impact of indigenous technologies' }
+    ],
+    'ss3_2': [
+      { id: 'li_ss3_2_1', name: 'Ethics and ethical behavior in development' },
+      { id: 'li_ss3_2_2', name: 'Consequences of unethical behaviour' }
+    ],
+    'ss3_3': [
+      { id: 'li_ss3_3_1', name: 'Common features of ancient African civilisations' },
+      { id: 'li_ss3_3_2', name: 'Origins, rise, and fall of empires in Western Sudan' }
+    ],
+    'ss3_4': [
+      { id: 'li_ss3_4_1', name: 'Origin, characteristics, and impact of the Industrial Revolution' }
+    ],
+    'ss4_1': [
+      { id: 'li_ss4_1_1', name: 'Origin and development of early trade in Africa' }
+    ],
+    'ss4_2': [
+      { id: 'li_ss4_2_1', name: 'Importance of entrepreneurship to personal development' },
+      { id: 'li_ss4_2_2', name: 'Similarities and differences between self-employment and entrepreneurship' }
+    ],
+    'ss4_3': [
+      { id: 'li_ss4_3_1', name: 'Types and relevance of consumer rights' },
+      { id: 'li_ss4_3_2', name: 'Importance of consumer protection' }
+    ],
+    'ss4_4': [
+      { id: 'li_ss4_4_1', name: 'Concept and features of financial literacy' },
+      { id: 'li_ss4_4_2', name: 'Avenues for ensuring financial security' },
+      { id: 'li_ss4_4_3', name: 'Ways of ensuring sustainable use of public finances' }
     ]
   };
 
@@ -568,22 +693,28 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
   };
 
   const getFilteredStrands = () => {
-    if (!data.subjectId) return [];
+    // Only show strands if SHS1 is selected
+    if (!data.subjectId || data.classGrade !== 'shs1') return [];
     return strands[data.subjectId as keyof typeof strands] || [];
   };
 
   const getFilteredSubStrands = () => {
-    if (!data.strandId) return [];
+    // Only show sub-strands if SHS1 is selected
+    if (!data.strandId || data.classGrade !== 'shs1') return [];
     return subStrands[data.strandId as keyof typeof subStrands] || [];
   };
 
   const getFilteredLearningIndicators = () => {
-    if (!data.subStrandId) return [];
+    // Only show learning indicators if SHS1 is selected
+    if (!data.subStrandId || data.classGrade !== 'shs1') return [];
     return learningIndicators[data.subStrandId as keyof typeof learningIndicators] || [];
   };
 
   // Get available teacher manuals for the selected class, subject and strand
   const getAvailableTeacherManuals = (data: FormData) => {
+    // Only return manuals for SHS1 class
+    if (data.classGrade !== 'shs1') return [];
+    
     // For physics subject, filter by strand
     if (data.subjectId === 'phy_shs' && data.strandId) {
       // Sections 1-4 are in Book 1
@@ -624,7 +755,7 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
         return teacherManuals.filter(
           manual => manual.subjectId === 'bio_shs' && manual.id === 'tm10'
         );
-      }
+      } 
       // Sections 1-5 are in Book 1 (excluding special case above)
       else if (['bio1', 'bio2', 'bio3', 'bio4', 'bio5'].includes(data.strandId)) {
         return teacherManuals.filter(
@@ -660,6 +791,29 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
           manual => manual.subjectId === 'sci_shs' && manual.id === 'tm12'
         );
       }
+    }
+    
+    // For ICT subject, filter by strand
+    if (data.subjectId === 'ict_shs' && data.strandId) {
+      // Sections 1-3 are in Book 1
+      if (['ict1'].includes(data.strandId)) {
+    return teacherManuals.filter(
+          manual => manual.subjectId === 'ict_shs' && manual.id === 'tm14'
+        );
+      } 
+      // Sections 4-5 are in Book 2
+      else if (['ict2'].includes(data.strandId)) {
+        return teacherManuals.filter(
+          manual => manual.subjectId === 'ict_shs' && manual.id === 'tm15'
+        );
+      }
+    }
+    
+    // For Social Studies subject - all sections are in one combined book
+    if (data.subjectId === 'ss_shs') {
+      return teacherManuals.filter(
+        manual => manual.subjectId === 'ss_shs' && manual.id === 'tm16'
+      );
     }
     
     // Return all manuals that match the subject
@@ -793,24 +947,31 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
               subjectId: '', // Reset dependent fields
               strandId: '',
               subStrandId: '',
-              documentId: '', // Reset document selection
+              documentId: '',
               learningIndicators: []
             })}
             disabled={!data.classLevel}
           >
             <SelectTrigger>
               <SelectValue placeholder={
-                !data.classLevel ? "Select class level first" : "Select a class"
+                !data.classLevel ? "Select level first" : "Select a class"
               } />
             </SelectTrigger>
             <SelectContent>
               {getFilteredClassGrades().map((grade) => (
-                <SelectItem key={grade.id} value={grade.id}>
-                  {grade.name}
+                <SelectItem 
+                  key={grade.id} 
+                  value={grade.id}
+                  disabled={grade.id !== 'shs1'}
+                >
+                  {grade.name}{grade.id !== 'shs1' ? ' (Coming Soon)' : ''}
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
+          {data.classGrade && data.classGrade !== 'shs1' && (
+            <p className="text-sm text-amber-600">Currently, only SHS1 content is available. Other classes will be added soon.</p>
+          )}
         </div>
 
         {/* Subject Selection */}
@@ -825,16 +986,22 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
               documentId: '', // Reset document selection when subject changes
               learningIndicators: []
             })}
-            disabled={!data.classGrade}
+            disabled={!data.classGrade || data.classGrade !== 'shs1'}
           >
             <SelectTrigger>
               <SelectValue placeholder={
-                !data.classGrade ? "Select class first" : "Select a subject"
+                !data.classGrade ? "Select class first" : 
+                data.classGrade !== 'shs1' ? "Only SHS1 content available" :
+                "Select a subject"
               } />
             </SelectTrigger>
             <SelectContent>
               {getFilteredSubjects().map((subject) => (
-                <SelectItem key={subject.id} value={subject.id}>
+                <SelectItem 
+                  key={subject.id} 
+                  value={subject.id}
+                  disabled={subject.disabled || data.classGrade !== 'shs1'}
+                >
                   {subject.name}
                 </SelectItem>
               ))}
@@ -852,11 +1019,13 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
               subStrandId: '', // Reset dependent field
               learningIndicators: []
             })}
-            disabled={!data.subjectId}
+            disabled={!data.subjectId || data.classGrade !== 'shs1'}
           >
             <SelectTrigger>
               <SelectValue placeholder={
-                !data.subjectId ? "Select subject first" : "Select a strand"
+                !data.subjectId ? "Select subject first" : 
+                data.classGrade !== 'shs1' ? "Only SHS1 content available" :
+                "Select a strand"
               } />
             </SelectTrigger>
             <SelectContent>
@@ -867,6 +1036,9 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
               ))}
             </SelectContent>
           </Select>
+          {data.subjectId && data.classGrade !== 'shs1' && (
+            <p className="text-sm text-amber-600">Content for {data.classGrade.toUpperCase()} will be added soon.</p>
+          )}
         </div>
 
         {/* Sub-Strand Selection */}
@@ -876,13 +1048,15 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
             value={data.subStrandId}
             onValueChange={(value) => onUpdate({ 
               subStrandId: value,
-              learningIndicators: [] // Reset learning indicators when sub-strand changes
+              learningIndicators: []
             })}
-            disabled={!data.strandId}
+            disabled={!data.strandId || data.classGrade !== 'shs1'}
           >
             <SelectTrigger>
               <SelectValue placeholder={
-                !data.strandId ? "Select strand first" : "Select a sub-strand"
+                !data.strandId ? "Select strand first" : 
+                data.classGrade !== 'shs1' ? "Only SHS1 content available" :
+                "Select a sub-strand"
               } />
             </SelectTrigger>
             <SelectContent>
@@ -895,50 +1069,53 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
           </Select>
         </div>
 
-        {/* Learning Indicators Selection */}
+        {/* Learning Indicators */}
         {data.subStrandId && (
           <div className="space-y-2">
-            <Label>Learning Indicators (Select at least one)</Label>
-            <div className="border rounded-md p-3 max-h-60 overflow-y-auto space-y-2">
-              {getFilteredLearningIndicators().length > 0 ? (
+            <Label>Learning Indicators</Label>
+            <div className="border rounded-md p-4 space-y-2 max-h-60 overflow-y-auto">
+              {data.classGrade !== 'shs1' ? (
+                <p className="text-sm text-amber-600">Content for {data.classGrade.toUpperCase()} will be added soon.</p>
+              ) : getFilteredLearningIndicators().length > 0 ? (
                 getFilteredLearningIndicators().map((indicator) => (
                   <div key={indicator.id} className="flex items-start space-x-2">
                     <Checkbox 
                       id={indicator.id} 
                       checked={data.learningIndicators.includes(indicator.id)}
                       onCheckedChange={(checked) => 
-                        handleLearningIndicatorChange(indicator.id, checked === true)
+                        handleLearningIndicatorChange(indicator.id, checked as boolean)
                       }
+                      disabled={data.classGrade !== 'shs1'}
                     />
                     <Label 
                       htmlFor={indicator.id} 
-                      className="text-sm leading-tight"
+                      className="text-sm font-normal leading-tight cursor-pointer"
                     >
                       {indicator.name}
                     </Label>
                   </div>
                 ))
               ) : (
-                <p className="text-sm text-gray-500 italic">
-                  No learning indicators available for this sub-strand.
-                </p>
+                <p className="text-sm text-muted-foreground">No learning indicators available for this sub-strand.</p>
               )}
             </div>
-            {data.subStrandId && data.learningIndicators.length === 0 && (
-              <p className="text-sm text-red-500">
-                Please select at least one learning indicator.
-              </p>
-            )}
           </div>
         )}
         
-        {/* Document Selection - Moved to bottom */}
+        {/* Teacher Manual Selection */}
         <div className="space-y-2 mt-4">
           <Label htmlFor="document" className="flex items-center">
             Teacher Manual <span className="text-red-500 ml-1">*</span>
           </Label>
           {data.classGrade && data.subjectId ? (
-            availableManuals.length > 0 ? (
+            data.classGrade !== 'shs1' ? (
+              <Alert variant="warning">
+                <AlertCircle className="h-4 w-4" />
+                <AlertDescription>
+                  Teacher manuals for {data.classGrade.toUpperCase()} will be added soon.
+                </AlertDescription>
+              </Alert>
+            ) : availableManuals.length > 0 ? (
               <>
                 <Select
                   value={data.documentId}
@@ -961,8 +1138,8 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
                 {!data.documentId && (
                   <p className="text-sm text-red-500 mt-1">
                     A teacher manual is required to generate questions.
-                  </p>
-                )}
+              </p>
+            )}
               </>
             ) : (
               <div className="space-y-2">
@@ -972,16 +1149,13 @@ const GenerateStep1New: React.FC<GenerateStep1Props> = ({ data, onUpdate }) => {
                     No teacher manuals found for this class and subject. Please contact an administrator.
                   </AlertDescription>
                 </Alert>
-              </div>
+          </div>
             )
           ) : (
-            <Alert>
-              <Info className="h-4 w-4" />
-              <AlertDescription>
-                Please select a class and subject to see available teacher manuals.
-              </AlertDescription>
-            </Alert>
-          )}
+            <p className="text-sm text-muted-foreground">
+              Please select a class and subject first.
+            </p>
+        )}
         </div>
       </CardContent>
     </Card>

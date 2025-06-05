@@ -1361,381 +1361,145 @@ export const api = {
         `;
         documentFound = true;
       } else if (formData.documentId === 'tm13' || formData.subjectId === 'chem_shs') {
-        // Chemistry Book - Contains both Book 1 and Book 2
-        documentText = `SHS 1 CHEMISTRY TEACHER'S MANUAL
+        // Chemistry - Book 1 and Book 2 combined
+        documentText = `SHS 1 CHEMISTRY TEACHER'S MANUAL - BOOK 1 and BOOK 2
         
         STRAND: ${formData.strandId === 'chem1' ? 'Physical Chemistry - Matter and Its Properties' : 
                  formData.strandId === 'chem2' ? 'Physical Chemistry - Equilibria' : 
                  formData.strandId === 'chem3' ? 'Systematic Chemistry of the Elements - Periodicity' : 
-                 formData.strandId === 'chem4' ? 'Systematic Chemistry of the Elements - Bonding' : 
-                 formData.strandId === 'chem5' ? 'Chemistry of Carbon Compounds - Characterisation of Organic Compounds' : 
+                 formData.strandId === 'chem4' ? 'Systematic Chemistry of the Elements - Bonding' :
+                 formData.strandId === 'chem5' ? 'Chemistry of Carbon Compounds - Characterisation of Organic Compounds' :
                  'Chemistry of Carbon Compounds - Organic Functional Groups'}
         
         SUB-STRAND: ${formData.subStrandId ? subStrandIdToName(formData.subStrandId) : 'Chemistry Concepts'}
         
         CONTENT:
         
-        ${formData.strandId === 'chem1' ? `
-        SECTION 1: INTRODUCTION TO CHEMISTRY, SCIENTIFIC METHOD AND ATOMS
-        
-        Meaning of Chemistry:
-        - Study of composition, properties, and changes of matter
-        - Understanding of materials and their transformations
-        - Application in medicine, agriculture, industry, and daily life
-        
-        Rules and Regulations in the Chemistry Laboratory:
-        - Safety protocols and procedures
-        - Proper handling of chemicals and equipment
-        - Use of protective gear (lab coat, goggles, gloves)
-        - Emergency procedures
-        
-        Storage of Chemicals:
-        - Classification and segregation systems
-        - Proper labeling and record-keeping
-        - Ventilation requirements
-        - Temperature and humidity controls
-        
-        The Scientific Method of Inquiry:
-        - Observation and question formulation
-        - Hypothesis development
-        - Experimentation and data collection
-        - Analysis and interpretation
-        - Conclusion and communication
-        
-        Atomic Theory:
-        - Dalton's Atomic Theory: Indivisible atoms, conservation in reactions
-        - J.J. Thomson's Cathode Ray Experiment: Discovery of electrons
-        - Bohr's Planetary Theory: Electron orbits and energy levels
-        - Aufbau's Principle: Electron configuration buildup
-        
-        Relative Atomic Mass:
-        - Definition and calculation methods
-        - Relationship to isotopic abundance
-        - Standard reference (Carbon-12)
-        
-        Radioactivity:
-        - Types of radiation (alpha, beta, gamma)
-        - Nuclear equations and balancing
-        - Half-life and decay calculations
-        - Applications in medicine, dating, energy production
-        
-        SECTION 2: CONCEPT OF THE MOLE
-        
-        Relative Atomic Mass (Ar):
-        - Definition relative to Carbon-12 standard
-        - Calculation methods using isotopic abundance
-        - Relationship to periodic table values
-        
-        The Atomic Mass Unit:
-        - Definition and relationship to grams
-        - Conversion factors and calculations
-        
-        The Mole as a Unit of Amount of Substance:
-        - Definition and Avogadro's number
-        - Relationship to mass, volume, and number of particles
-        - Molar mass calculations
-        
-        Calculating the Number of Entities:
-        - Conversion between moles, mass, and number of particles
-        - Application to atoms, molecules, and formula units
-        
-        Mole Concepts and Their Relevance in Preparation of Standard Solution:
-        - Concentration calculations (molarity, molality)
-        - Dilution procedures and calculations
-        - Standardization techniques
-        
-        SECTION 3: MOLE RATIOS, CHEMICAL FORMULAE AND CHEMICAL EQUATIONS
-        
-        IUPAC Nomenclature and Writing Balanced Equations:
-        - Naming inorganic compounds
-        - Balancing chemical equations
-        - Types of chemical reactions
-        
-        Chemical Formulae:
-        - Empirical and molecular formulas
-        - Determination from experimental data
-        - Significance in representing compounds
-        
-        Laws of Chemical Combination:
-        - Law of conservation of mass
-        - Law of definite proportions
-        - Law of multiple proportions
-        
-        Stoichiometry:
-        - Calculation of reactants and products
-        - Reaction yield
-        - Limiting reactant determination
-        
-        Limiting and Excess Reagents:
-        - Identification methods
-        - Calculations involving limiting reagents
-        - Impact on reaction outcomes
-        
-        Percentage Yield of Product:
-        - Definition and calculation
-        - Factors affecting actual yield
-        - Industrial implications of yield optimization
-        
-        SECTION 4: KINETIC THEORY AND THE STATES OF MATTER
-        
-        Kinetic Theory of Matter:
-        - Basic postulates
-        - Explanation of physical properties
-        - Energy and particle movement relationships
-        
-        The Gaseous State:
-        - Characteristics and behavior
-        - Pressure, volume, temperature relationships
-        - Ideal vs. real gas behavior
-        
-        Change of State Processes:
-        - Melting, freezing, vaporization, condensation, sublimation
-        - Energy changes during phase transitions
-        - Phase diagrams and critical points
-        
-        Gas Laws:
-        - Boyle's Law: Pressure-volume relationship
-        - Charles' Law: Volume-temperature relationship
-        - Avogadro's Law: Volume-amount relationship
-        - Combined gas law applications
-        
-        Diffusion:
-        - Rate factors and Graham's Law
-        - Applications and demonstrations
-        
-        Dalton's Law of Partial Pressures:
-        - Definition and applications
-        - Calculations for gas mixtures
-        
-        The Ideal Gas Equation:
-        - PV = nRT relationship
-        - Applications and limitations
-        - Units and conversion factors
-        
-        Non-Ideal Gas Behaviour:
-        - Deviations at high pressure and low temperature
-        - Intermolecular forces effects
-        - Compressibility factor
-        
-        Van der Waals Equation:
-        - Corrections for molecular volume and attractions
-        - Constants for different gases
-        - Applications and significance
-        
-        Preparation and Tests for Gases:
-        - Hydrogen: Zinc and dilute acid reaction
-        - Carbon Dioxide: Calcium carbonate and acid reaction
-        - Ammonia: Ammonium salt and alkali reaction
-        - Tests: Hydrogen (pop test), CO2 (lime water), Ammonia (HCl fumes)` : 
-        
-        formData.strandId === 'chem2' ? `
-        SECTION 5: SOLUBILITY AND ITS APPLICATIONS IN QUALITATIVE ANALYSIS
-        
-        Solubility:
-        - Definition and factors affecting solubility
-        - Temperature and pressure effects
-        - Solubility curves and saturation concepts
-        - Dissolution process and energy changes
-        
-        Solubility Rules:
-        - Guidelines for predicting solubility of ionic compounds
-        - Exceptions and limitations
-        - Application in precipitation reactions
-        - Common soluble and insoluble compounds
-        
-        Qualitative Chemical Analysis:
-        - Principles and methodology
-        - Cation identification procedures
-        - Anion identification tests
-        - Flame tests and precipitate formations
-        - Systematic separation and identification schemes
-        - Documentation and reporting of results
-        - Sources of error and troubleshooting
-        - Applications in forensics, environmental monitoring, and industry` : 
-        
-        formData.strandId === 'chem3' ? `
-        SECTION 6: PERIODIC PROPERTIES
-        
-        Periodicity and Periodic Table:
-        - Historical development of the periodic table
-        - Mendeleev's contributions and predictions
-        - Modern periodic table organization
-        - Blocks, periods, and groups
-        
-        Periodic Law:
-        - Statement and implications
-        - Atomic number as the basis for arrangement
-        - Periodic trends across periods and down groups
-        
-        Periodic Properties:
-        - Atomic radius: Trends and explanations
-        - Ionization energy: First and successive values
-        - Electron affinity: Patterns and exceptions
-        - Electronegativity: Pauling scale and chemical bonding implications
-        - Metallic character: Transition from metal to non-metal
-        - Oxidation states: Patterns across the table
-        - Reactivity patterns in groups and periods
-        - Physical properties correlations with position
-        
-        Applications of Periodicity:
-        - Predicting chemical behavior
-        - Understanding bonding patterns
-        - Materials science applications
-        - Environmental chemistry relationships` : 
-        
-        formData.strandId === 'chem4' ? `
-        SECTION 7: INTERATOMIC BONDING
-        
-        Ionic Bonding:
-        - Electron transfer process
-        - Lattice formation and energy
-        - Properties of ionic compounds
-        - Examples and models
-        
-        Covalent Bonding:
-        - Electron sharing mechanism
-        - Single, double, and triple bonds
-        - Polar and non-polar covalent bonds
-        - Properties of covalent compounds
-        - Lewis structures and formal charge
-        - Resonance structures and significance
-        
-        Metallic Bonding:
-        - Electron sea model
-        - Delocalized electrons
-        - Properties explained by bonding
-        - Alloys and their characteristics
-        
-        Comparison of Bonding Types:
-        - Relative strengths and stability
-        - Transition between types
-        - Mixed bonding in compounds
-        - Energy considerations
-        
-        SECTION 8: INTERMOLECULAR BONDING
-        
-        Intermolecular Bonding:
-        - Distinction from intramolecular forces
-        - Relative strengths compared to chemical bonds
-        - Role in physical properties
-        
-        Types of Intermolecular Forces:
-        - Dipole-dipole interactions: Permanent dipoles alignment
-        - Hydrogen bonding: Special case of strong dipole interaction
-        - Van der Waals forces: London dispersion forces
-        - Ion-dipole interactions: Role in solution chemistry
-        
-        Effects of Intermolecular Forces on Physical Properties:
-        - Melting and boiling points: Correlation with force strength
-        - Solubility patterns: "Like dissolves like" principle
-        - Viscosity and surface tension: Molecular attraction effects
-        - Vapor pressure: Ease of molecular escape
-        - Crystal structure determination
-        - Physical state at room temperature
-        
-        Biological and Industrial Significance:
-        - Protein structure and function
-        - DNA double helix stability
-        - Membrane formation and properties
-        - Surfactant action mechanism
-        - Adhesives and cohesives operation
-        - Material properties engineering` : 
-        
-        formData.strandId === 'chem5' ? `
-        SECTION 9: QUALITATIVE AND QUANTITATIVE ANALYSIS OF ORGANIC COMPOUNDS
-        
-        Methods of Separation and Purification of Organic Compounds:
-        - Distillation: Simple and fractional techniques
-        - Crystallization: Process and yield optimization
-        - Chromatography: Types and applications
-        - Extraction: Solvent selection and procedures
-        - Sublimation: Applications for suitable compounds
-        
-        Test for Carbon and Hydrogen in Organic Compounds:
-        - Combustion test for carbon dioxide production
-        - Water vapor formation from hydrogen
-        - Apparatus and procedure details
-        - Interpretation of results
-        
-        Quantification of Carbon, Hydrogen, and Halogens in Organic Compounds:
-        
-        Elemental Analysis Techniques:
-        - Combustion analysis principles
-        - Apparatus setup and operation
-        - Calculation of percentage composition
-        - Error sources and mitigation
-        
-        Carbon Determination:
-        - Conversion to carbon dioxide
-        - Gravimetric and volumetric methods
-        - Calculation formulas and examples
-        
-        Hydrogen Determination:
-        - Conversion to water
-        - Collection and measurement methods
-        - Calculation approaches
-        
-        Halogen Determination:
-        - Carius method principles
-        - Silver halide precipitation
-        - Calculation of halogen content
-        - Identification of specific halogens
-        
-        Practical Applications:
-        - Structure confirmation
-        - Purity assessment
-        - Formula determination
-        - Quality control in manufacturing` : 
-        
-        formData.strandId === 'chem6' ? `
-        SECTION 10: CLASSIFICATIONS OF ORGANIC COMPOUNDS
-        
-        Organic Chemistry:
-        - Definition and scope
-        - Historical development
-        - Importance in biology and industry
-        - Unique properties of carbon
-        
-        Homologous Series:
-        - Definition and characteristics
-        - General formulas
-        - Nomenclature principles
-        - Physical property trends
-        
-        Classification by Functional Groups:
-        
-        Hydrocarbons:
-        - Alkanes: Saturated chains and rings
-        - Alkenes: Carbon-carbon double bonds
-        - Alkynes: Carbon-carbon triple bonds
-        - Aromatics: Benzene and derivatives
-        
-        Oxygen-Containing Compounds:
-        - Alcohols: R-OH structure and properties
-        - Ethers: R-O-R' linkages
-        - Aldehydes: Terminal carbonyl groups
-        - Ketones: Internal carbonyl groups
-        - Carboxylic acids: -COOH functionality
-        - Esters: Derived from acids and alcohols
-        
-        Nitrogen-Containing Compounds:
-        - Amines: Classification and properties
-        - Amides: Derived from acids and amines
-        - Nitriles: Containing -CN group
-        
-        Halogen-Containing Compounds:
-        - Alkyl halides: Properties and reactivity
-        - Aryl halides: Aromatic substitution
-        
-        Structure and Reactivity Relationships:
-        - Effect of functional groups on properties
-        - Electron-withdrawing and electron-donating effects
-        - Steric influences on reactions
-        - Reactivity patterns across series` : ''}
+        The content covers fundamental principles and applications of chemistry, including:
+        - Matter and its properties
+        - Chemical equations and stoichiometry
+        - Atomic structure and bonding
+        - Periodic trends
+        - Organic chemistry concepts
+        - Quantitative and qualitative analysis
         `;
         documentFound = true;
-      } else if (formData.documentId === 'tm6' || (formData.subjectId === 'sci_shs' && ['sci1', 'sci2', 'sci3', 'sci4', 'sci5', 'sci6', 'sci7', 'sci8', 'sci9'].includes(formData.strandId))) {
-        // ... existing code ...
+      } else if (formData.documentId === 'tm14' || (formData.subjectId === 'ict_shs' && ['ict1'].includes(formData.strandId))) {
+        // ICT Book 1 - Sections 1-3
+        documentText = `SHS 1 ICT TEACHER'S MANUAL - BOOK 1
+        
+        STRAND: ICTs in the Society
+        
+        SUB-STRAND: ${formData.subStrandId === 'ict1_1' ? 'Organising, Managing and Presenting Information Using Essential Productivity Tools' : 
+                     formData.subStrandId === 'ict1_2' ? 'Emerging Technology and Applications' :
+                     'Connecting and Communicating Online'}
+        
+        CONTENT:
+        
+        Section 1: Multimedia Tools and Applications
+        - Computer hardware and software needed to create documents
+        - Basic file handling, editing tools, and reviewing tools in Word
+        - Formatting tools for text, tables, and graphics
+        - Layout tools for lines, paragraphs, and pages
+        - Creating and customizing lists
+        - Working with PowerPoint for presentations
+        
+        Section 2: Digital Devices – Examples and Importance
+        - Definition and importance of digital devices
+        - Features of various digital devices (desktops, laptops, tablets, servers)
+        - Purpose and uses of smartphones, cameras, wearables, and game devices
+        - Smart device features and the Internet of Things (IoT)
+        
+        Section 3: Internet Evolution, ISPs and Their Functions
+        - Definition, services, and evolution of the internet
+        - Pros and cons of internet usage
+        - Overview of how the internet works
+        - Definition, examples, and functions of ISPs
+        `;
+        documentFound = true;
+      } else if (formData.documentId === 'tm15' || (formData.subjectId === 'ict_shs' && ['ict2'].includes(formData.strandId))) {
+        // ICT Book 2 - Sections 4-5
+        documentText = `SHS 1 ICT TEACHER'S MANUAL - BOOK 2
+        
+        STRAND: Network Systems for Transmitting Information
+        
+        SUB-STRAND: ${formData.subStrandId === 'ict2_1' ? 'Guided and Unguided Network Systems' : 
+                     'Computer and Information Security'}
+        
+        CONTENT:
+        
+        Section 4: Guided and Unguided Network Systems
+        - Definition and advantages of computer networks
+        - Network classification by area (LAN, MAN, WAN)
+        - Network classification by architecture (client-server vs peer-to-peer)
+        - Overview of cloud networks vs traditional computing
+        - Network topology classification and comparisons
+        - Transmission media classification and features
+        - Guidelines for network use
+        
+        Section 5: Physical Safety Hazards in Computer Use
+        - Introduction to computer safety risks
+        - Musculoskeletal disorders and repetitive strain injuries
+        - Vision problems, headaches, and hearing issues
+        - Sleep disorders and weight problems related to computer use
+        - Preventing trips, falls, electrocution, and fire risks
+        `;
+        documentFound = true;
+      } else if (formData.documentId === 'tm16' || formData.subjectId === 'ss_shs') {
+        // Social Studies - Combined Book 1 and Book 2
+        documentText = `SHS 1 SOCIAL STUDIES TEACHER'S MANUAL - BOOK 1 and BOOK 2
+        
+        STRAND: ${formData.strandId === 'ss1' ? 'Identity, Significance and Purpose' : 
+                 formData.strandId === 'ss2' ? 'Law and Order in the Society' : 
+                 formData.strandId === 'ss3' ? 'Ethics and Human Development' : 
+                 'Production, Exchange and Creativity'}
+        
+        SUB-STRAND: ${formData.subStrandId ? subStrandIdToName(formData.subStrandId) : 'Social Studies Concepts'}
+        
+        CONTENT:
+        
+        Section 1: A Geographical and Historical Sketch of Africa
+        - Key geographical features of Africa and their influence on ancient societies
+        - Impact of geographical features on agriculture, trade networks, and settlement patterns
+        - Climate change effects on early African populations
+        
+        Section 2: Civic Ideals and Practices
+        - Meaning and purpose of road safety in Ghanaian society
+        - Causes and socio-economic implications of road accidents
+        - Road signs, markings, and their implications for safety
+        - Institutions responsible for road safety
+        
+        Section 3: Indigenous Knowledge Systems
+        - Impact of indigenous technologies on ancient Africa
+        
+        Section 4: Ethics and Human Values
+        - Ethics and ethical behavior in individual and societal development
+        - Consequences of unethical behavior
+        
+        Section 5: African Civilisations
+        - Common features of ancient African civilisations
+        - Origins, rise, and fall of empires in Western Sudan
+        
+        Section 6: Revolutions that Changed the World
+        - Origin, characteristics, and impact of the Industrial Revolution
+        
+        Section 7: Economic Activities in Africa
+        - Origin and development of early domestic and external trade
+        
+        Section 8: Entrepreneurship, Workplace Culture and Productivity
+        - Importance of entrepreneurship to personal development
+        - Similarities and differences between self-employment and entrepreneurship
+        
+        Section 9: Consumer Rights, Protection and Responsibilities
+        - Types and relevance of consumer rights
+        - Importance of consumer protection in Ghana
+        
+        Section 10: Financial Literacy
+        - Concept and features of financial literacy
+        - Strategies for ensuring financial security
+        - Sustainable use of public finances
+        `;
+        documentFound = true;
       } else if (formData.documentId.startsWith('uploaded_')) {
         // For uploaded files, in a real app we would extract the text content
         documentText = "This is the extracted content from the uploaded teacher manual file.";
@@ -2188,7 +1952,26 @@ function subStrandIdToName(subStrandId: string): string {
     'chem4_1': 'Interatomic Bonding',
     'chem4_2': 'Intermolecular Bonding',
     'chem5_1': 'Qualitative and Quantitative Analysis of Organic Compounds',
-    'chem6_1': 'Classifications of Organic Compounds'
+    'chem6_1': 'Classifications of Organic Compounds',
+    
+    // ICT sub-strands
+    'ict1_1': 'Organising, Managing and Presenting Information Using Essential Productivity Tools',
+    'ict1_2': 'Emerging Technology and Applications',
+    'ict1_3': 'Connecting and Communicating Online',
+    'ict2_1': 'Guided and Unguided Network Systems',
+    'ict2_2': 'Computer and Information Security',
+    
+    // Social Studies sub-strands
+    'ss1_1': 'A Geographical and Historical Sketch of Africa',
+    'ss2_1': 'Civic Ideals and Practices',
+    'ss3_1': 'Indigenous Knowledge Systems',
+    'ss3_2': 'Ethics and Human Values',
+    'ss3_3': 'Civilisations of Africa',
+    'ss3_4': 'Revolutions that Changed the World',
+    'ss4_1': 'Economic Activities in Africa',
+    'ss4_2': 'Entrepreneurship, Workplace Culture and Productivity',
+    'ss4_3': 'Consumer Rights, Protection and Responsibilities',
+    'ss4_4': 'Financial Literacy'
   };
   
   return subStrandMap[subStrandId] || subStrandId;
